@@ -1,10 +1,10 @@
 public class CentralAtendimento {
-    public PilhaProcesso atendimentosPendentes;
-    public PilhaProcesso historico;
+    public PilhaPrioridade atendimentosPendentes;
+    public PilhaPrioridade historico;
 
     public CentralAtendimento() {
-        atendimentosPendentes = new PilhaProcesso();
-        historico = new PilhaProcesso();
+        atendimentosPendentes = new PilhaPrioridade();
+        historico = new PilhaPrioridade();
     }
 
     public void abrirProcesso(Processo processo) {
@@ -24,10 +24,10 @@ public class CentralAtendimento {
     }
 
     public void listarPendentes() {
-        atendimentosPendentes.imprimir();
+        atendimentosPendentes.listar();
     }
 
     public void listarHistorico() {
-        historico.imprimir();
+        historico.listar();
     }
 }

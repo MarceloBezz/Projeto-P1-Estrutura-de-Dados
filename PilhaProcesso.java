@@ -34,4 +34,8 @@ public class PilhaProcesso {
 
         System.out.println(sb.toString());
     }
+
+    public int ocupacaoVetor() {
+        return vetor.getOcupacao();
+    }
 }
