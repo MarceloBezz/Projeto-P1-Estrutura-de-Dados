@@ -2,7 +2,6 @@ public class VetorDinamico {
     private Processo[] vetor;
     private int capacidade;
     private int ocupacao;
-    
 
     public VetorDinamico(int capacidade) {
         this.capacidade = capacidade;
@@ -54,5 +53,13 @@ public class VetorDinamico {
 
     public int getCapacidade() {
         return capacidade;
+    }
+
+    public int getOcupacao() {
+        return ocupacao;
+    }
+
+    public Processo[] getVetor() {
+        return vetor;
     }
 }

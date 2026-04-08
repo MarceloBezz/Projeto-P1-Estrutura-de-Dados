@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 public class Processo {
     private int protocolo;
     private String solicitante;
@@ -11,6 +13,10 @@ public class Processo {
         this.tipoServico = tipoServico;
         this.prioridade = prioridade;
         this.protocolo = ++contador;
+        this.dataHora = LocalDateTime.now()
+                    .toString()
+                    .substring(0, 16)
+                    .replace("T", " ");
     }
 
     public int getProtocolo() {
