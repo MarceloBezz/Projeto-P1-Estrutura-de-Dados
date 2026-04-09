@@ -18,9 +18,13 @@ public class CentralAtendimento {
     }
 
     public void desfazerUltimoAtendimento() {
-        Processo processo = historico.peek();
-        historico.pop();
-        atendimentosPendentes.push(processo);
+        try {
+            Processo processo = historico.peek();
+            historico.pop();
+            atendimentosPendentes.push(processo);
+        } catch (PilhaVaziaException e) {
+            System.out.println("Não há processos para desfazer!");
+        }
     }
 
     public void listarPendentes() {
