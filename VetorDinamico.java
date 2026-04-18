@@ -14,10 +14,12 @@ public class VetorDinamico {
     }
 
     public String listar() {
+        if (ocupacao == 0)
+            return "Não há processos para exibir!";
+
         StringBuilder resultado = new StringBuilder();
-        for (Processo processo : vetor) {
-            if (processo != null)
-                resultado.append(processo.toString()).append("\n");
+        for (int i = 0; i < ocupacao; i++) {
+            resultado.append(vetor[i].toString()).append("\n");
         }
         return resultado.toString();
     }
@@ -29,13 +31,13 @@ public class VetorDinamico {
     }
 
     public void remover() {
-        vetor[ocupacao--] = null;
+        vetor[--ocupacao] = null;
         if ((capacidade / 4) > ocupacao)
             redimensiona(capacidade / 2);
     }
 
     public int buscarPorProtocolo(int protocolo) {
-        for (int i = 0; i < vetor.length; i++) {
+        for (int i = 0; i < ocupacao; i++) {
             if (vetor[i].getProtocolo() == protocolo)
                 return i;
         }

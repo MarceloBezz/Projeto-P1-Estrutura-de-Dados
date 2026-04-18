@@ -55,22 +55,27 @@ public class PilhaPrioridade {
         try {
             System.out.println("Atendimentos urgentes:");
             urgente.imprimir();
-        } catch (Exception e) {
+        } catch (PilhaVaziaException e) {
             System.out.println("A pilha de urgentes não possui nenhum processo!");
         }
 
         try {
             System.out.println("Atendimentos normais:");
             normal.imprimir();
-        } catch (Exception e) {
+        } catch (PilhaVaziaException e) {
             System.out.println("A pilha de normais não possui nenhum processo!");
         }
 
         try {
             System.out.println("Atendimentos baixos:");
             baixa.imprimir();
-        } catch (Exception e) {
+        } catch (PilhaVaziaException e) {
             System.out.println("A pilha de baixos não possui nenhum processo!");
         }
+    }
+
+    public void clear() {
+        while (tamanho() > 0)
+            pop();
     }
 }

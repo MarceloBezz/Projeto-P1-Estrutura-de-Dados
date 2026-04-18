@@ -9,12 +9,17 @@ public class CentralAtendimento {
 
     public void abrirProcesso(Processo processo) {
         atendimentosPendentes.push(processo);
+        historico.clear();
     }
 
     public void atenderProximo() {
-        Processo processo = atendimentosPendentes.peek();
-        atendimentosPendentes.pop();
-        historico.push(processo);
+        try {
+            Processo processo = atendimentosPendentes.peek();
+            atendimentosPendentes.pop();
+            historico.push(processo);
+        } catch (PilhaVaziaException e) {
+            System.out.println("Não há processos para atender!");
+        }
     }
 
     public void desfazerUltimoAtendimento() {
